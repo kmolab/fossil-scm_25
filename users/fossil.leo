@@ -179,6 +179,8 @@ c.recursiveImport(
 
 and
 
-http://gnuwin32.sourceforge.net/packages/coreutils.htm</t>
+http://gnuwin32.sourceforge.net/packages/coreutils.htm
+
+need Git/bin/sh.exe</t>
 </tnodes>
 </leo_file>

@@ -349,7 +349,7 @@ endif
 #    not really apply to MinGW (i.e. since ALL external libraries
 #    are NOT linked dynamically).
 #
-# LIB = -static
+LIB = -static
 
 #### MinGW: If available, use the Unicode capable runtime startup code.
 #
