@@ -12,7 +12,7 @@
 # MinGW or MinGW-w64.
 #
 # Some of the special options which can be passed to make
-# USE_WINDOWS=1    if building under a windows command prompt
+#   USE_WINDOWS=1    if building under a windows command prompt
 #   X64=1            if using an unprefixed 64-bit mingw compiler
 #
 

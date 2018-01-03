@@ -24,9 +24,10 @@
 </v>
 <v t="leo.20180101224058.2" a="E"><vh>@path ./../</vh>
 <v t="leo.20180101232407.1"><vh>@edit .gitignore</vh></v>
-<v t="leo.20180101232359.1"><vh>@path win</vh></v>
 <v t="leo.20180101224307.1"><vh>set PREFIX = x86_64-w64-mingw32-</vh></v>
+<v t="leo.20180101232359.1" a="E"><vh>@path win</vh>
 <v t="leo.20180101224222.1"><vh>@edit Makefile.mingw</vh></v>
+</v>
 </v>
 <v t="leo.20180101230054.1"><vh>importer script</vh></v>
 </vnodes>
