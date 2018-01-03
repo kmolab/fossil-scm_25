@@ -52,6 +52,5 @@ Mkfile.old
 dkms.conf
 
 # Fossil SCM
-__FOSSIL__
 .fslckout
 wbld/
