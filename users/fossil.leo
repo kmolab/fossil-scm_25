@@ -13,6 +13,7 @@
 <v t="leo.20180101224110.2"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="leo.20180101224110.3"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
+<v t="leo.20180421205640.1"><vh>readme</vh></v>
 <v t="leo.20180101224326.1"><vh>@button mingw32-make</vh></v>
 <v t="leo.20180101234621.1"><vh>Requirements</vh></v>
 <v t="leo.20180101225953.1"><vh>Debug</vh></v>
@@ -183,5 +184,35 @@ and
 http://gnuwin32.sourceforge.net/packages/coreutils.htm
 
 need Git/bin/sh.exe</t>
+<t tx="leo.20180421205640.1">採用 MSYS2 編譯 Fossil SCM 過程, 可以從 Gnuwin32 coreutils 取得視窗環境下執行的 cat 與 grep, 並且確定 sh.exe 位於指令搜尋路徑 (例如, 透過 git/bin 目錄中的 sh.exe), 先編譯 Fossil SCM 附帶的 zlib 後, 再設定 PREFIX = x86_64-w64-mingw32-, 就可順利完成 fossil.exe 的編譯. 在不修改 win/Makefile.mingw 的情況下, 必須與 zlib1.dll 配合才能執行. 若開啟 LIB = -static 設定, 則可以將程式庫納入 fossil.exe 中執行。
+
+取得 fossil clone 原始碼
+
+從 Fossil SCM 倉儲取得原始碼壓縮檔後, 在 wd/fossil 目錄中解開 trunk 最新版本的原始碼, 目前為 Fossil SCM 2.5 版.
+
+fossil clone https://www.fossil-scm.org fossil.fossil
+cd wd
+mkdir fossil
+cd fossil
+fossil open ./../../fossil.fossil
+
+編譯 zlib
+
+在 MSYS2 環境中編譯 Fossil SCM 時, 必須先編譯 compat/zlib
+
+cd compat/zlib
+mingw32-make -f win32/Makefile.gcc
+
+編譯 fossil.exe
+
+之後, 再退出 compat/zlib 目錄, 回到 wd/fossil 目錄中, 編輯 win/Makefile.mingw, 設定
+
+PREFIX = x86_64-w64-mingw32-
+
+接著以 mingw32-make -f win/Makefile.mingw 編譯 fossil.exe
+
+執行 fossil.exe 時, 必須搭配 compat/zlib/zlib1.dll 才能執行.
+
+根據以上說明所建立的教學用倉儲位於: https://github.com/kmolab/fossil-scm_25</t>
 </tnodes>
 </leo_file>
